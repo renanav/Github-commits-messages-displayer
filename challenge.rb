@@ -11,9 +11,8 @@ repository_name=gets.chomp
 
 response = HTTParty.get("https://api.github.com/repos/#{username}/#{repository_name}/commits")
 body = JSON.parse response.body
-# puts body.class
-body=commits
-puts commits.last
-puts commits.last[-2]
+puts body.class
+puts body[0]
+puts body[3]
 # puts body
 # puts response
