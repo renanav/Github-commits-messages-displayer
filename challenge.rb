@@ -1,7 +1,7 @@
 require 'httparty'
 require 'json'
 
-puts "What is the repository owner's username?"
+puts `say What is the repository owners username?`
 print "Owner Username: "
 username=gets.chomp.downcase
 
@@ -14,5 +14,3 @@ body = JSON.parse response.body
 puts body.class
 puts body[0]
 puts body[3]
-# puts body
-# puts response
