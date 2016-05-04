@@ -11,5 +11,9 @@ repository_name=gets.chomp
 
 response = HTTParty.get("https://api.github.com/repos/#{username}/#{repository_name}/commits")
 body = JSON.parse response.body
-puts body[0]["commit"]["message"]
-puts body[3]["commit"]["message"]
+
+# body.map {|item| item['commit']}.map {|item| item['message']}.map {|msg| puts msg}
+# Make it batter and nicer
+body.each do |item|
+  puts item['commit']['message']
+end
